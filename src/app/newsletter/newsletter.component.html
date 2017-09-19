@@ -1,0 +1,21 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <h1>Newsletter</h1>
+    </md-card-title>
+  </md-card-header>
+  <form (submit)="subscribe()">
+    <md-card-content>
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Name"type="text" name="name">
+      </md-input-container>
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Email" type="text" name="email">
+      </md-input-container>
+    </md-card-content>
+    <md-card-actions>
+      <button type="submit" md-button>Subscribe!</button>
+      <button type="button" md-button (click)="cancel()">Cancel</button>
+    </md-card-actions>
+  </form>
+</md-card>
