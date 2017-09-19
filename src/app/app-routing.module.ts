@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'items', component: ItemsComponent},
   {path: 'widgets', component: WidgetsComponent},
+  {path: 'profile', loadChildren: './user/user.module#UserModule'},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

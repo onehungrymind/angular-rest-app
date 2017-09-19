@@ -1,0 +1,12 @@
+.profile-card {
+  width: 400px;
+}
+
+.mat-card-avatar {
+  margin-right: 20px;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/img/lake.jpg');
+  background-size: cover;
+}
