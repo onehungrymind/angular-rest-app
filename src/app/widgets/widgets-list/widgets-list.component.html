@@ -1,0 +1,20 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <h1>Widgets</h1>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-list>
+      <md-list-item *ngFor="let widget of widgets" (click)="selected.emit(widget)">
+        <h3 md-line>{{widget.name}}</h3>
+        <button *ngIf="!readonly" md-icon-button (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
+          <md-icon>close</md-icon>
+        </button>
+        <p md-line>
+          {{widget.description}}
+        </p>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>

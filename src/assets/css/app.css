@@ -1,0 +1,46 @@
+body {
+  background-color: whitesmoke;
+}
+.content .mdl-layout__header {
+  background-color: #263238;
+}
+.content .mdl-spinner {
+  margin: 0 auto;
+}
+.mdl-navigation__link--icon>.material-icons {
+  margin-right: 8px;
+  margin-top: 8px;
+}
+.page-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+.item-card.mdl-card {
+  width: 100%;
+  min-height: inherit;
+  cursor: pointer;
+}
+.item-card .mdl-textfield {
+  width: 100%;
+}
+.item-card .mdl-textfield__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  padding: 4px 0;
+  width: 100%;
+  background: 0 0;
+  text-align: left;
+  color: inherit;
+}
+.item-card label {
+  font-size: 12px;
+  font-weight: bold;
+}
+*:focus {
+  outline: none;
+}
