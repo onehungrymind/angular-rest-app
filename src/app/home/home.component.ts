@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
   widgets: Widget[];
 
   constructor(private itemsService: ItemsService,
-              private widgetsService: WidgetsService) { }
+              private widgetsService: WidgetsService) {
+  }
 
   ngOnInit() {
     this.getItems();
@@ -30,5 +31,9 @@ export class HomeComponent implements OnInit {
   getWidgets() {
     this.widgetsService.all()
       .subscribe(widgets => this.widgets = widgets);
+  }
+
+  handleResults(items) {
+    this.items = items;
   }
 }

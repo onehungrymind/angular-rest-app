@@ -1,7 +1,10 @@
 <div class="container">
-  <app-items-list class="col-50" [items]="items" [readonly]="true">
-  </app-items-list>
+  <div class="col-50">
+    <app-items-search (onResults)="handleResults($event)"></app-items-search>
+    <app-items-list [items]="items" [readonly]="true"></app-items-list>
+  </div>
 
-  <app-widgets-list class="col-50" [widgets]="widgets" [readonly]="true">
-  </app-widgets-list>
+  <div class="col-50">
+    <app-widgets-list [widgets]="widgets" [readonly]="true"></app-widgets-list>
+  </div>
 </div>

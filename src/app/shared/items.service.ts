@@ -1,14 +1,20 @@
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, URLSearchParams } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Item } from './item.model';
+
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
 
 const BASE_URL = 'http://localhost:3000/items/';
-const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
+const HEADER = {headers: new Headers({'Content-Type': 'application/json'})};
 
 @Injectable()
 export class ItemsService {
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+  }
 
   all() {
     return this.http.get(BASE_URL)
@@ -32,6 +38,14 @@ export class ItemsService {
 
   delete(item: Item) {
     return this.http.delete(`${BASE_URL}${item.id}`)
+      .map(res => res.json());
+  }
+
+  search(term: string) {
+    const search = new URLSearchParams();
+    search.set('q', term);
+
+    return this.http.get(`${BASE_URL}`, {search})
       .map(res => res.json());
   }
 }

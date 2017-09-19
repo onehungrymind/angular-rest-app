@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"npm run server\" \"ng serve\"",
-    "server": "json-server server/db.json --watch",
+    "server": "json-server server/api/db.json --watch",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
