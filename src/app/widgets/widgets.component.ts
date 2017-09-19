@@ -26,7 +26,7 @@ export class WidgetsComponent implements OnInit {
     this.currentWidget = widget;
   }
 
-  cancel() {
+  cancel(widget) {
     this.resetCurrentWidget();
   }
 

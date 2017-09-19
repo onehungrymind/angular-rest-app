@@ -25,7 +25,7 @@ export class ItemsComponent implements OnInit {
     this.currentItem = item;
   }
 
-  cancel() {
+  cancel(item) {
     this.resetCurrentItem();
   }
 
