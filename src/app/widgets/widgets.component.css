@@ -2,3 +2,13 @@
   cursor: pointer;
   background: whitesmoke;
 }
+
+md-card-actions {
+  margin-bottom: 0;
+}
+md-card-header {
+  margin-bottom: 10px;
+}
+.full-width {
+  width: 100%;
+}

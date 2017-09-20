@@ -29,18 +29,23 @@
       <md-card-header>
         <md-card-title>
           <h1>
-            <span *ngIf="selectedWidget?.id; else prompt">{{selectedWidget.name}}</span>
-            <ng-template #prompt>Select</ng-template>
+            <span *ngIf="selectedWidget?.id; else prompt">Editing {{selectedWidget.name}}</span>
+            <ng-template #prompt>Create</ng-template>
           </h1>
         </md-card-title>
       </md-card-header>
-      <form>
+      <form (submit)="saved(selectedWidget)" #formRef="ngForm">
         <md-card-content>
-          <pre>{{ selectedWidget | json }}</pre>
+          <md-input-container class="full-width">
+            <input mdInput required placeholder="Name" [(ngModel)]="selectedWidget.name" type="text" name="name">
+          </md-input-container>
+          <md-input-container class="full-width">
+            <input mdInput placeholder="Description" [(ngModel)]="selectedWidget.description" type="text" name="description">
+          </md-input-container>
         </md-card-content>
         <md-card-actions>
-          <button type="submit" md-button>Save</button>
-          <button type="button" md-button (click)="selected(null)">Cancel</button>
+          <button type="submit" [disabled]="!formRef.valid" md-button>Save</button>
+          <button type="button" md-button (click)="cancelled(selectedItem)">Cancel</button>
         </md-card-actions>
       </form>
     </md-card>
