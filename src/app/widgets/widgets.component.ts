@@ -60,7 +60,7 @@ export class WidgetsComponent implements OnInit {
   }
 
   deleteWidget(widget) {
-    this.widgetsService.delete(widget.id)
+    this.widgetsService.delete(widget)
       .subscribe(response => {
         this.getWidgets();
         this.resetCurrentWidget();

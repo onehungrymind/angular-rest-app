@@ -59,7 +59,7 @@ export class ItemsComponent implements OnInit {
   }
 
   deleteItem(item) {
-    this.itemsService.delete(item.id)
+    this.itemsService.delete(item)
       .subscribe(response => {
         this.getItems();
         this.resetCurrentItem();
