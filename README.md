@@ -5,11 +5,11 @@ A simple REST app built using Angular, Angular Material and the Angular CLI.
 ## Prerequisites
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - Node.js v6.9+ and NPM v3.x – we recommend using [NVM (Linux/Mac)](https://github.com/creationix/nvm) or [NVM-Windows (Windows)](https://github.com/coreybutler/nvm-windows)
-- Install Angular CLI via `npm i -g angular-cli`
+- Install Angular CLI via `npm install -g @angular/cli`
 
 ### Getting Started
 
-There are two main parts to this application. The first is the REST API, for which we are using `json-server`. The second part is the Angular 2 application server which we will start using `ng serve`.  
+There are two main parts to this application. The first is the REST API, for which we are using `json-server`. The second part is the Angular application server which we will start using `ng serve`.  
 
 To get started run the commands below.
 
