@@ -1,11 +1,8 @@
 <div class="container">
   <div class="col-50">
-    <app-items-search (onResults)="handleResults($event)"></app-items-search>
     <app-items-list [items]="items" [readonly]="true"></app-items-list>
   </div>
 
   <div class="col-50">
-    <app-newsletter></app-newsletter>
-    <app-widgets-list [widgets]="widgets" [readonly]="true"></app-widgets-list>
   </div>
 </div>

@@ -5,8 +5,8 @@
     </md-card-title>
   </md-card-header>
   <md-card-content>
-    <md-list [@listAnimation]="prepareListState()" [@.disabled]="animationsDisabled">
-      <md-list-item *ngFor="let item of items; trackBy: trackItem" (click)="selected.emit(item)" class="record">
+    <md-list>
+      <md-list-item *ngFor="let item of items" (click)="selected.emit(item)" class="record">
         <h3 md-line>{{item.name}}</h3>
         <button *ngIf="!readonly" md-icon-button (click)="deleted.emit(item);$event.stopImmediatePropagation();">
           <md-icon>close</md-icon>
