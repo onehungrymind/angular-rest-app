@@ -18,7 +18,7 @@ export class ItemsSearchComponent implements OnInit {
 
   ngOnInit() {
     const search$ = Observable.fromEvent(this.getNativeElement(this.itemsSearch), 'keyup')
-      .debounceTime(400)
+      .debounceTime(200)
       .distinctUntilChanged()
       .map((event: any) => event.target.value)
       .switchMap(term => this.itemsService.search(term))
