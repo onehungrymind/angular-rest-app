@@ -1,1 +1,48 @@
-<h1>Hello Widgets</h1>
+<div class="container">
+  <!-- WIDGETS LIST -->
+  <div class="col-50">
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          <h1>Widgets</h1>
+        </md-card-title>
+      </md-card-header>
+      <md-card-content>
+        <md-list>
+          <md-list-item *ngFor="let widget of widgets" (click)="selected(widget)">
+            <h3 md-line>{{widget.name}}</h3>
+            <button md-icon-button>
+              <md-icon>close</md-icon>
+            </button>
+            <p md-line>
+              {{widget.description}}
+            </p>
+          </md-list-item>
+        </md-list>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <!-- WIDGET DETAILS -->
+  <div class="col-50">
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          <h1>
+            <span *ngIf="selectedWidget?.id; else prompt">{{selectedWidget.name}}</span>
+            <ng-template #prompt>Select</ng-template>
+          </h1>
+        </md-card-title>
+      </md-card-header>
+      <form>
+        <md-card-content>
+          <pre>{{ selectedWidget | json }}</pre>
+        </md-card-content>
+        <md-card-actions>
+          <button type="submit" md-button>Save</button>
+          <button type="button" md-button (click)="selected(null)">Cancel</button>
+        </md-card-actions>
+      </form>
+    </md-card>
+  </div>
+</div>
