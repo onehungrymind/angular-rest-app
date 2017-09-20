@@ -1,9 +1,10 @@
-# angular-rest-app
+# Angular Rest App
 
-A simple REST-ful app built using the latest Angular and Angular CLI.
+A simple REST app built using Angular, Angular Material and the Angular CLI.
 
-## Dependencies
-- You must have `node v >= 4.0` and `npm v >= 3` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
+## Prerequisites
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Node.js v6.9+ and NPM v3.x – we recommend using [NVM (Linux/Mac)](https://github.com/creationix/nvm) or [NVM-Windows (Windows)](https://github.com/coreybutler/nvm-windows)
 - Install Angular CLI via `npm i -g angular-cli`
 
 ### Getting Started
@@ -20,6 +21,8 @@ $ npm start
 ```
 
 Then navigate to [http://localhost:4200](http://localhost:4200/#/items) in your browser.
+
+> Note: the above terminal commands are for Mac. Remember to substitute the appropriate commands for your OS.
 
 ## Code scaffolding
 
