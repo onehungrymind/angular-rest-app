@@ -1,29 +1,11 @@
-/* tslint:disable:directive-selector */
-/* tslint:disable:component-selector */
-/* tslint:disable:directive-class-suffix */
-/* tslint:disable:component-class-suffix */
-
 import 'hammerjs';
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { AppComponent } from './app.component';
-import { Component, Directive, Input } from '@angular/core';
 import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-@Directive({
-  selector: '[routerLink]'
-})
-class RouterLinkDirectiveStub {
-  @Input() routerLink;
-}
-
-@Component({
-  selector: 'router-outlet',
-  template: ''
-})
-class RouterOutletComponentStub {}
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -32,8 +14,8 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [ AppMaterialModule, BrowserAnimationsModule ],
-      declarations: [ AppComponent, RouterOutletComponentStub, RouterLinkDirectiveStub ],
+      imports: [ AppMaterialModule, BrowserAnimationsModule, RouterTestingModule ],
+      declarations: [ AppComponent ],
     }).createComponent(AppComponent);
 
     component = fixture.componentInstance;

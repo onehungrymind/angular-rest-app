@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Item } from '../../shared';
 import { trigger, transition, state, group, style, animate, keyframes, query, stagger } from '@angular/animations';
 
@@ -22,7 +22,7 @@ import { trigger, transition, state, group, style, animate, keyframes, query, st
 
           query(':leave', [
             stagger('50ms', [
-              animate('500ms cubic-bezier(.35,0,.25,1)', style({ opacity: 0, height: '0px', borderTop: 0, borderBottom:0 }))
+              animate('500ms cubic-bezier(.35,0,.25,1)', style({ opacity: 0, height: '0px', borderTop: 0, borderBottom: 0 }))
             ])
           ], { optional: true })
         ]),
@@ -30,13 +30,13 @@ import { trigger, transition, state, group, style, animate, keyframes, query, st
     ]),
   ]
 })
-export class ItemsListComponent {
+export class ItemsListComponent implements OnInit {
   @Input() items: Item[];
   @Input() readonly = false;
   @Output() selected = new EventEmitter();
   @Output() deleted = new EventEmitter();
 
-  private animationsDisabled = true;
+  animationsDisabled = true;
 
   trackItem(index, item) {
     return item.id;
