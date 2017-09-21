@@ -17,7 +17,27 @@ describe('Service: Items', () => {
     });
   });
 
-  it('should exist', inject([ItemsService], (service: ItemsService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('#all should...', () => {
+
+  });
+
+  it('#load should...', () => {
+
+  });
+
+  it('#create should...', () => {
+
+  });
+
+  it('#update should...', () => {
+
+  });
+
+  it('#delete should...', () => {
+
+  });
+
+  it('#search should...', () => {
+
+  });
 });
