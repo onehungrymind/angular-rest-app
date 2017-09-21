@@ -8,7 +8,7 @@ import { Widget } from '../shared/widget.model';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
-  selectedWidget: Widget;
+  currentWidget: Widget;
   widgets: Widget[];
 
   constructor(private widgetsService: WidgetsService) { }
@@ -18,19 +18,23 @@ export class WidgetsComponent implements OnInit {
     this.reset();
   }
 
-  selected(widget) {
-    this.selectedWidget = widget;
-  }
-
   reset() {
-    this.selectedWidget = { id: null, name: '', description: ''};
+    this.currentWidget = { id: null, name: '', description: ''};
   }
 
-  saved(widget) {
+  selectWidget(widget) {
+    this.currentWidget = widget;
+  }
+
+  deleteWidget(widget) {
+    console.log('DELETING', widget)
+  }
+
+  saveWidget(widget) {
     console.log('SAVING', widget);
   }
 
-  cancelled(widget) {
+  cancel(widget) {
     this.reset();
   }
 }
