@@ -1,7 +1,7 @@
 import 'hammerjs';
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DebugElement, QueryList } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
