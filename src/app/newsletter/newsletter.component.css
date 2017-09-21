@@ -1,0 +1,11 @@
+md-card {
+  margin-bottom: 20px;
+}
+
+md-card-header {
+  margin-bottom: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
