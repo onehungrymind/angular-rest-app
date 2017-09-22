@@ -20,9 +20,9 @@ export class ItemComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.route.paramMap
-    //   .switchMap((params: ParamMap) => this.itemsService.load(+params.get('id')))
-    //   .subscribe(item => this.item = item);
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.itemsService.load(+params.get('id')))
+      .subscribe(item => this.item = item);
   }
 
   saveItem(item) {
