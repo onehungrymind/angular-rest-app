@@ -6,11 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotificationsService } from '../shared/notifications.service';
 
-class NotificationsServiceStub {}
+class NotificationsServiceStub {
+  emit() {}
+}
 
 describe('NewsletterComponent', () => {
   let component: NewsletterComponent;
   let fixture: ComponentFixture<NewsletterComponent>;
+  let notificationService: NotificationsService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,6 +29,7 @@ describe('NewsletterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NewsletterComponent);
     component = fixture.componentInstance;
+    notificationService = fixture.debugElement.injector.get(NotificationsService);
     fixture.detectChanges();
   });
 
@@ -52,14 +56,13 @@ describe('NewsletterComponent', () => {
       component.subscriber.controls.email.setValue('test@domain.com');
     });
 
-    it('should log the form value and validity', () => {
-      spyOn(console, 'log');
+    it('should send notification of subscription', () => {
+      spyOn(notificationService, 'emit');
 
-      const expectedValue = {name: 'John Jones', email: 'test@domain.com'};
-      const expectedValidity = true;
+      const expectedValue = `John Jones just subscribed!`;
 
       component.subscribe(component.subscriber);
-      expect(console.log).toHaveBeenCalledWith(expectedValue, expectedValidity);
+      expect(notificationService.emit).toHaveBeenCalledWith(expectedValue);
     });
 
     it('should reset the form', () => {
