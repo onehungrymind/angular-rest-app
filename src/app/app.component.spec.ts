@@ -9,6 +9,18 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RouterOutletStub } from '../testing/router.stubs';
 import { RouterOutlet } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { NotificationsService } from './shared/notifications.service';
+import { MdSnackBar } from '@angular/material';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
+class NotificationsServiceStub {
+  notifications$ = Observable.of({})
+}
+class MdSnackBarStub {
+  open() {}
+}
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -21,7 +33,11 @@ describe('AppComponent', () => {
     fixture = TestBed.configureTestingModule({
       imports: [ AppMaterialModule, BrowserAnimationsModule, RouterTestingModule ],
       declarations: [ AppComponent ],
-      providers: [{provide: RouterOutlet, useClass: RouterOutletStub}]
+      providers: [
+        {provide: RouterOutlet, useClass: RouterOutletStub},
+        {provide: MdSnackBar, useClass: MdSnackBarStub},
+        {provide: NotificationsService, useClass: NotificationsServiceStub}
+      ]
     }).createComponent(AppComponent);
 
     component = fixture.componentInstance;
