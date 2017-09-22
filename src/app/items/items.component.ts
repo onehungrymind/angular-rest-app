@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService, Item } from '../shared';
+import { NotificationsService } from '../shared/notifications.service';
 
 @Component({
   selector: 'app-items',
@@ -10,7 +11,7 @@ export class ItemsComponent implements OnInit {
   items: Item[];
   currentItem: Item;
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private itemsService: ItemsService, private ns: NotificationsService) { }
 
   ngOnInit() {
     this.getItems();
@@ -45,6 +46,7 @@ export class ItemsComponent implements OnInit {
   createItem(item) {
     this.itemsService.create(item)
       .subscribe(response => {
+        this.ns.emit('Item created!');
         this.getItems();
         this.resetCurrentItem();
       });
@@ -53,6 +55,7 @@ export class ItemsComponent implements OnInit {
   updateItem(item) {
     this.itemsService.update(item)
       .subscribe(response => {
+        this.ns.emit('Item saved!');
         this.getItems();
         this.resetCurrentItem();
       });
@@ -61,6 +64,7 @@ export class ItemsComponent implements OnInit {
   deleteItem(item) {
     this.itemsService.delete(item)
       .subscribe(response => {
+        this.ns.emit('Item deleted!');
         this.getItems();
         this.resetCurrentItem();
       });

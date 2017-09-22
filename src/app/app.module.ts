@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-material.module';
 
-import { ItemsService, WidgetsService } from './shared';
+import { ItemsService, NotificationsService, WidgetsService } from './shared';
 
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
@@ -42,7 +42,11 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [ItemsService, WidgetsService],
+  providers: [
+    ItemsService,
+    NotificationsService,
+    WidgetsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

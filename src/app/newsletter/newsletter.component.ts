@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NotificationsService } from '../shared/notifications.service';
 
 interface Subscriber {
   name: string;
@@ -14,7 +15,8 @@ interface Subscriber {
 export class NewsletterComponent implements OnInit {
   subscriber: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private ns: NotificationsService) { }
 
   ngOnInit() {
     this.subscriber = this.fb.group({
@@ -24,7 +26,7 @@ export class NewsletterComponent implements OnInit {
   }
 
   subscribe({ value, valid }: { value: Subscriber, valid: boolean }) {
-    console.log(value, valid);
+    this.ns.emit(`${value.name} just subscribed!`);
     this.reset();
   }
 
