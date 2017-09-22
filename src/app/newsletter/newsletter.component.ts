@@ -26,7 +26,7 @@ export class NewsletterComponent implements OnInit {
   }
 
   subscribe({ value, valid }: { value: Subscriber, valid: boolean }) {
-    this.ns.emit(`${value.name} just subscribed!`);
+    this.ns.emit({body: `${value.name} just subscribed!`});
     this.reset();
   }
 

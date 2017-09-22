@@ -20,6 +20,9 @@ import { WidgetDetailComponent } from './widgets/widget-detail/widget-detail.com
 import { HomeComponent } from './home/home.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ItemComponent } from './items/item/item.component';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { ItemComponent } from './items/item/item.component';
     ItemComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,

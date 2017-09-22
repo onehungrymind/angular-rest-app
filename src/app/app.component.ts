@@ -24,11 +24,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.ns.notifications$
-      .subscribe(notification => this.showNotification(notification));
+      .subscribe((notification: Notification) => this.showNotification(notification));
   }
 
-  showNotification(notification) {
-    this.snackbar.open(notification, 'OK', {
+  showNotification(notification: Notification) {
+    this.snackbar.open(notification.body, 'OK', {
       duration: 3000
     });
   }
