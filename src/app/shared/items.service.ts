@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Item } from './item.model';
 
 const BASE_URL = 'http://localhost:3000/items/';
+
 const HEADER = {headers: new Headers({'Content-Type': 'application/json'})};
 
 @Injectable()
