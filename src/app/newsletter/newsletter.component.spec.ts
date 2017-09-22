@@ -4,6 +4,9 @@ import { NewsletterComponent } from './newsletter.component';
 import { AppMaterialModule } from '../app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotificationsService } from '../shared/notifications.service';
+
+class NotificationsServiceStub {}
 
 describe('NewsletterComponent', () => {
   let component: NewsletterComponent;
@@ -12,7 +15,10 @@ describe('NewsletterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppMaterialModule, BrowserAnimationsModule, ReactiveFormsModule],
-      declarations: [ NewsletterComponent ]
+      declarations: [ NewsletterComponent ],
+      providers: [
+        {provide: NotificationsService, useClass: NotificationsServiceStub}
+      ]
     })
     .compileComponents();
   }));

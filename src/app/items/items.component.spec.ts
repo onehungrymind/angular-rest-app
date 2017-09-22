@@ -4,8 +4,10 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 
 import { ItemsComponent } from './items.component';
 import { ItemsService } from '../shared';
+import { NotificationsService } from '../shared/notifications.service';
 
 class ItemsServiceStub {}
+class NotificationsServiceStub {}
 
 describe('Component: Items', () => {
   let comp: ItemsComponent;
@@ -17,7 +19,8 @@ describe('Component: Items', () => {
         ItemsComponent
       ],
       providers: [
-        {provide: ItemsService, useClass: ItemsServiceStub}
+        {provide: ItemsService, useClass: ItemsServiceStub},
+        {provide: NotificationsService, useClass: NotificationsServiceStub}
       ]
     });
 
