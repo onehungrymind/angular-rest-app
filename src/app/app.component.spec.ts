@@ -10,7 +10,7 @@ import { RouterOutletStub } from '../testing/router.stubs';
 import { RouterOutlet } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { NotificationsService } from './shared/notifications.service';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -18,7 +18,7 @@ import 'rxjs/add/observable/of';
 class NotificationsServiceStub {
   notifications$ = Observable.of({})
 }
-class MdSnackBarStub {
+class MatSnackBarStub {
   open() {}
 }
 
@@ -35,7 +35,7 @@ describe('AppComponent', () => {
       declarations: [ AppComponent ],
       providers: [
         {provide: RouterOutlet, useClass: RouterOutletStub},
-        {provide: MdSnackBar, useClass: MdSnackBarStub},
+        {provide: MatSnackBar, useClass: MatSnackBarStub},
         {provide: NotificationsService, useClass: NotificationsServiceStub}
       ]
     }).createComponent(AppComponent);

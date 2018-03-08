@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ROUTER_ANIMATION } from './router-animations';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { NotificationsService } from './shared/notifications.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     { path: '/profile', icon: 'face', label: 'Profile'}
   ];
 
-  constructor(private snackbar: MdSnackBar,
+  constructor(private snackbar: MatSnackBar,
               private ns: NotificationsService) {}
 
   ngOnInit() {

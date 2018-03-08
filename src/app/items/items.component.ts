@@ -32,7 +32,7 @@ export class ItemsComponent implements OnInit {
 
   getItems() {
     this.itemsService.all()
-      .subscribe(items => this.items = items);
+      .subscribe((items: Item[]) => this.items = items);
   }
 
   saveItem(item) {

@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileComponent } from './profile.component';
-import { MdButtonModule, MdCardModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -13,7 +14,7 @@ describe('ProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MdCardModule, MdButtonModule, BrowserAnimationsModule],
+      imports: [MatCardModule, MatButtonModule, BrowserAnimationsModule],
       declarations: [ ProfileComponent ]
     })
     .compileComponents();
@@ -27,12 +28,12 @@ describe('ProfileComponent', () => {
   });
 
   it('should have a title', () => {
-    const title = de.query(By.css('md-card-title'))
+    const title = de.query(By.css('mat-card-title'))
     expect(title.nativeElement.innerText).toBeTruthy();
   });
 
   it('should have a sub-title', () => {
-    const subtitle = de.query(By.css('md-card-subtitle'))
+    const subtitle = de.query(By.css('mat-card-subtitle'))
     expect(subtitle.nativeElement.innerText).toBeTruthy();
   });
 
@@ -42,12 +43,12 @@ describe('ProfileComponent', () => {
   });
 
   it('should have content', () => {
-    const content = de.query(By.css('md-card-content p'))
+    const content = de.query(By.css('mat-card-content p'))
     expect(content.nativeElement.innerText).toBeTruthy();
   });
 
   it('should have two action buttons', () => {
-    const actions = de.queryAll(By.css('md-card-actions button'))
+    const actions = de.queryAll(By.css('mat-card-actions button'))
     expect(actions.length).toBe(2);
   });
 });

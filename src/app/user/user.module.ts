@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { ProfileComponent } from './profile/profile.component';
-import { MdButtonModule, MdCardModule } from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-    MdButtonModule,
-    MdCardModule,
+    MatButtonModule,
+    MatCardModule,
     UserRoutingModule
   ],
   declarations: [ProfileComponent]

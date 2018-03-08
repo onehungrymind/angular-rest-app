@@ -3,10 +3,7 @@ import { ItemsService } from '../../shared/items.service';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
+import { map, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-items-search',
@@ -21,12 +18,13 @@ export class ItemsSearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    const search$ = Observable.fromEvent(this.getNativeElement(this.itemsSearch), 'keyup')
-      .debounceTime(200)
-      .distinctUntilChanged()
-      .map((event: any) => event.target.value)
-      .switchMap(term => this.itemsService.search(term))
-      .subscribe(items => this.onResults.emit(items));
+    const search$ = Observable.fromEvent(this.getNativeElement(this.itemsSearch), 'keyup').pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map((event: any) => event.target.value),
+      switchMap(term => this.itemsService.search(term))
+    )
+    .subscribe(items => this.onResults.emit(items));
   }
 
   getNativeElement(element) {

@@ -1,20 +1,20 @@
-<md-card>
-  <md-card-header>
-    <md-card-title>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
       <h1>Widgets</h1>
-    </md-card-title>
-  </md-card-header>
-  <md-card-content>
-    <md-list>
-      <md-list-item *ngFor="let widget of widgets" (click)="selected.emit(widget)">
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let widget of widgets" (click)="selected.emit(widget)">
         <h3 md-line>{{widget.name}}</h3>
-        <button *ngIf="!readonly" md-icon-button (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
-          <md-icon>close</md-icon>
+        <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
+          <mat-icon>close</mat-icon>
         </button>
         <p md-line>
           {{widget.description}}
         </p>
-      </md-list-item>
-    </md-list>
-  </md-card-content>
-</md-card>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

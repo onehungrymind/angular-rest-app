@@ -14,5 +14,14 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
-  }
+  },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test.ts",
+    "**/*.spec.ts"
+  ]
 }

@@ -4,7 +4,7 @@ import { ItemsService } from '../../shared/items.service';
 
 import { Item } from '../../shared/item.model';
 
-import 'rxjs/add/operator/switchMap';
+import { switchMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-item',
@@ -21,9 +21,11 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap
-      .map((params: ParamMap) => +params.get('id'))
-      .switchMap(id => this.itemsService.load(id))
-      .subscribe(item => this.item = item);
+      .pipe(
+        map((params: ParamMap) => +params.get('id')),
+        switchMap(id => this.itemsService.load(id))
+      )
+      .subscribe((item: Item) => this.item = item);
   }
 
   saveItem(item) {

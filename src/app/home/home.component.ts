@@ -25,12 +25,12 @@ export class HomeComponent implements OnInit {
 
   getItems() {
     this.itemsService.all()
-      .subscribe(items => this.items = items);
+      .subscribe((items: Item[]) => this.items = items);
   }
 
   getWidgets() {
     this.widgetsService.all()
-      .subscribe(widgets => this.widgets = widgets);
+      .subscribe((widgets: Widget[]) => this.widgets = widgets);
   }
 
   handleResults(items) {

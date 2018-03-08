@@ -1,12 +1,12 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, inject } from '@angular/core/testing';
-import { Headers, Http } from '@angular/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 import { ItemsService } from './items.service';
 import { HttpStub } from '../../testing/http.stubs';
 
-const HEADER = {headers: new Headers({'Content-Type': 'application/json'})};
+const HEADER = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 describe('Service: Items', () => {
   let http: HttpStub;
@@ -16,12 +16,12 @@ describe('Service: Items', () => {
     TestBed.configureTestingModule({
       providers: [
         ItemsService,
-        {provide: Http, useClass: HttpStub}
+        {provide: HttpClient, useClass: HttpStub}
       ]
     });
   });
 
-  beforeEach(inject([Http, ItemsService], (h: HttpStub, i: ItemsService) => {
+  beforeEach(inject([HttpClient, ItemsService], (h: HttpStub, i: ItemsService) => {
     http = h;
     itemsService = i;
   }));

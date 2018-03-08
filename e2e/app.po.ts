@@ -6,6 +6,6 @@ export class AngularRestAppPage {
   }
 
   getAppTitle() {
-    return element(by.css('app-root md-toolbar-row > span')).getText();
+    return element(by.css('app-root mat-toolbar-row > span')).getText();
   }
 }

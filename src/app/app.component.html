@@ -1,25 +1,25 @@
-<md-toolbar color="primary">
-  <button (click)="sidenav.toggle()" md-mini-fab><md-icon>menu</md-icon></button>
+<mat-toolbar color="primary">
+  <button (click)="sidenav.toggle()" md-mini-fab><mat-icon>menu</mat-icon></button>
   <span>
     {{title}}
   </span>
-</md-toolbar>
+</mat-toolbar>
 
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" class="app-sidenav">
     <nav>
-      <a md-button
+      <a mat-button
          class="nav-link"
          *ngFor="let link of links"
          [routerLink]="link.path"
          routerLinkActive="active">
-        <md-icon>{{link.icon}}</md-icon>
+        <mat-icon>{{link.icon}}</mat-icon>
         {{link.label}}
       </a>
     </nav>
-  </md-sidenav>
+  </mat-sidenav>
 
   <div class="app-content" [@routerAnimations]="prepareRouterState(routerOutlet)">
     <router-outlet #routerOutlet="outlet"></router-outlet>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

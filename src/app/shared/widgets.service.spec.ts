@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, inject } from '@angular/core/testing';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { WidgetsService } from './widgets.service';
 
@@ -12,7 +12,7 @@ describe('Service: Items', () => {
     TestBed.configureTestingModule({
       providers: [
         WidgetsService,
-        {provide: Http, useClass: HttpStub}
+        {provide: HttpClient, useClass: HttpStub}
       ]
     });
   });
