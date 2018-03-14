@@ -7,11 +7,11 @@
   <mat-card-content>
     <mat-list>
       <mat-list-item *ngFor="let widget of widgets" (click)="selected.emit(widget)">
-        <h3 md-line>{{widget.name}}</h3>
+        <h3 matLine>{{widget.name}}</h3>
         <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
           <mat-icon>close</mat-icon>
         </button>
-        <p md-line>
+        <p matLine>
           {{widget.description}}
         </p>
       </mat-list-item>

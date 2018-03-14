@@ -7,11 +7,11 @@
   <mat-card-content>
     <mat-list [@listAnimation]="prepareListState()" [@.disabled]="animationsDisabled">
       <mat-list-item *ngFor="let item of items; trackBy: trackItem" (click)="selected.emit(item)" class="record">
-        <h3 md-line>{{item.name}}</h3>
+        <h3 matLine>{{item.name}}</h3>
         <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(item);$event.stopImmediatePropagation();">
           <mat-icon>close</mat-icon>
         </button>
-        <p md-line>
+        <p matLine>
           {{item.description}}
         </p>
       </mat-list-item>

@@ -13,7 +13,7 @@ body {
   display: flex;
 }
 
-mat-toolbar-row {
+mat-toolbar {
   justify-content: space-between;
 }
 
@@ -21,11 +21,11 @@ p {
   margin: 16px;
 }
 
-[md-raised-button] {
+[mat-raised-button] {
   width: 100%;
 }
 
-md-grid-list {
+mat-grid-list {
   max-width: 1403px;
   margin: 16px;
 }

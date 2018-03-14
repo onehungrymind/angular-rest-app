@@ -6,12 +6,12 @@
   </mat-card-header>
   <form novalidate [formGroup]="subscriber" (submit)="subscribe(subscriber)">
     <mat-card-content>
-      <div class="full-width">
+      <mat-form-field class="full-width">
         <input type="text"  matInput placeholder="Name" formControlName="name">
-      </div>
-      <div class="full-width">
+      </mat-form-field>
+      <mat-form-field class="full-width">
         <input type="text" matInput placeholder="Email" formControlName="email">
-      </div>
+      </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
       <button type="submit" mat-button>Subscribe!</button>
